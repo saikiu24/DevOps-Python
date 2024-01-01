@@ -12,3 +12,8 @@ Wow, I can't imagine that I can do this
 _____
 '''
 print('long_string: ', long_string)
+
+first_name = 'Andrei'
+last_name = 'Neagoie'
+full_name = first_name + ' ' + last_name
+print('full_name: ', full_name)
