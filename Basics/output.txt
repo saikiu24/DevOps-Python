@@ -1,0 +1,18 @@
+total 24
+drwxr-xr-x 1 IGS 197121    0 Jan 30 16:23 .
+drwxr-xr-x 1 IGS 197121    0 Jan 30 16:13 ..
+drwxr-xr-x 1 IGS 197121    0 Jan 30 16:19 __pycache__
+-rw-r--r-- 1 IGS 197121  232 Jan 30 16:14 augmented-assignment-operator.py
+-rw-r--r-- 1 IGS 197121  189 Jan  1 20:10 complex.py
+-rw-r--r-- 1 IGS 197121  112 Jan  1 20:10 dataTypes.py
+-rw-r--r-- 1 IGS 197121   72 Jan  1 20:29 escape-sequence.py
+-rw-r--r-- 1 IGS 197121   91 Jan  1 20:10 expression-vs-statement.py
+-rw-r--r-- 1 IGS 197121  300 Jan  1 22:20 formatted-strings.py
+-rw-r--r-- 1 IGS 197121  412 Jan  1 20:20 long-string.py
+-rw-r--r-- 1 IGS 197121    0 Jan 30 16:23 output.txt
+-rw-r--r-- 1 IGS 197121   25 Jan  1 20:11 README.md
+-rw-r--r-- 1 IGS 197121  171 Jan  1 20:23 string-concatenation.py
+-rw-r--r-- 1 IGS 197121 1720 Jan 30 16:23 subprocess-test.py
+-rw-r--r-- 1 IGS 197121  130 Jan  1 20:26 type-conversion.py
+-rw-r--r-- 1 IGS 197121  307 Jan  1 20:10 typing.py
+-rw-r--r-- 1 IGS 197121  472 Jan  1 20:10 variables.py
