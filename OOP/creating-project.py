@@ -7,10 +7,21 @@ class PlayerCharacter:
     
     # __init__ = class Constructor
     # similar to constructor(attr1, attr2) { super(attr1) } in javascript
-    # __init__ is called whenever we instantiate
-    # self refers to PlayerCharacter
-    def __init__(self, name, age):  
+    # __init__ is called whenever we instantiate a Class
+    # self refers to this Class itself as PlayerCharacter
+    # self. = this. in javascript
+    def __init__(self, name='anonymous', age=0):  
+        # name='anonymous', age=0 => default values
         
+        # Instantiating only if age > 18
+        if (age > 18):
+            self.name = name
+            self.age = age
+        elif (age == 0):
+            print(f'Failed to instantiate this Class with {self}:\nname: {name}\nage: {age}')
+            print(f'Please check whether you\'ve provided age')
+        
+            
         # If this.membership = True
         if (self.membership):
             self.name = name # attributes / properties
@@ -24,7 +35,8 @@ class PlayerCharacter:
         print(f'My name is: {self.name}')
 
 
-# Instantiate player1 using class    
+# Instantiating player1 using class PlayerCharacter
+# with default values
 player1 = PlayerCharacter('Player1', 20)
 #help(player1)
 print(f'player1:\n{player1}')
@@ -47,3 +59,8 @@ print(f'player2.shout(): {player2.shout()}')
 #print(f'player2.name: {player2.name}')
 #print(f'player2.age: {player2.age}')
 #print(f'player2.attack: {player2.attack}')
+
+print(f'\n')
+print(f'\n')
+player3 = PlayerCharacter()
+player3.attack = 100
