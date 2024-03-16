@@ -1,4 +1,6 @@
 # OOP
+from colorama import Fore, Back, Style
+
 class PlayerCharacter:
     
     # Class Object Attribute => self.attribute
@@ -18,8 +20,8 @@ class PlayerCharacter:
             self.name = name
             self.age = age
         elif (age == 0):
-            print(f'Failed to instantiate this Class with {self}:\nname: {name}\nage: {age}')
-            print(f'Please check whether you\'ve provided age')
+            print(Fore.RED + f'Failed to instantiate this Class with {self}:\nname: {name}\nage: {age}')
+            print(Fore.RED + f'Please check whether you\'ve provided age')
         
             
         # If this.membership = True
@@ -32,35 +34,64 @@ class PlayerCharacter:
         return 'done'
     
     def shout(self):
-        print(f'My name is: {self.name}')
+        print(Fore.YELLOW + f'My name is: {self.name}')
+    
+    # Decorator
+    # to write a function
+    # using @classmethod => there's 1 default class (cls)
+    @classmethod
+    def adding_things(cls, num1, num2):
+        try:
+            # Instantiate an Object using cls(name, age)
+            # player1.adding_things(): <__main__.PlayerCharacter object at 0x0000019E072F5E50>
+            return cls('Teddy', num1 + num2)
+        
+        except TypeError as e:
+            print(Fore.RED + f'TypeError:\n{e}')
 
 
 # Instantiating player1 using class PlayerCharacter
 # with default values
 player1 = PlayerCharacter('Player1', 20)
 #help(player1)
-print(f'player1:\n{player1}')
-print(f'player1.name: {player1.name}') 
-print(f'player1.age: {player1.age}')
+print(Fore.YELLOW + f'player1:\n{player1}')
+print(Fore.YELLOW + f'player1.name: {player1.name}') 
+print(Fore.YELLOW + f'player1.age: {player1.age}')
 print(f'\n')
-print(f'player1.run(): {player1.run("OMG!")}')
+print(Fore.YELLOW + f'player1.run(): {player1.run("OMG!")}')
 
-print(f'\n')
 print(f'\n')
 player2 = PlayerCharacter('Player2', 24)
 player2.attack = 50
 
-print(f'player1.membership: {player1.membership}')
-print(f'player2.membership: {player2.membership}')
+print(Fore.YELLOW + f'player1.membership: {player1.membership}')
+print(Fore.YELLOW + f'player2.membership: {player2.membership}')
 print(f'\n')
-print(f'player1.shout(): {player1.shout()}')
-print(f'player2.shout(): {player2.shout()}')
+print(Fore.YELLOW + f'player1.shout(): {player1.shout()}')
+print(Fore.YELLOW + f'player2.shout(): {player2.shout()}')
 #print(f'player2:\n{player2}')
 #print(f'player2.name: {player2.name}')
 #print(f'player2.age: {player2.age}')
 #print(f'player2.attack: {player2.attack}')
 
 print(f'\n')
-print(f'\n')
 player3 = PlayerCharacter()
 player3.attack = 100
+
+print(f'\n')
+# When using @classmethod decorator to instantiate a Class
+# we must instantiate the Class (cls) 
+# @classmethod
+# def func(cls, arg1, arg2):
+
+# Otherwise
+# TypeError: adding_things() takes 2 positional arguments
+# but 3 were given
+print(Fore.YELLOW + f'player1.adding_things(): {player1.adding_things(2,3)}')
+
+print(f'\n')
+# Instantiating player4 using a function from Class.Attribute
+# player4 = PlayerCharacter.adding_things(num1,num2) => Class.Attribute(arg1,arg2)
+# rather than just calling the Class => player4 = PlayerCharacter()
+player4 = PlayerCharacter.adding_things(2,3)
+print(f'player4.age: {player4.age}')
