@@ -5,9 +5,10 @@ class PlayerCharacter:
     # NOT change across objects built with same Class
     membership = True
     
+    # __init__ = class Constructor
+    # similar to constructor(attr1, attr2) { super(attr1) } in javascript
     # __init__ is called whenever we instantiate
     # self refers to PlayerCharacter
-    
     def __init__(self, name, age):  
         
         # If this.membership = True
