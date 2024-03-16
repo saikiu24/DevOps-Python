@@ -38,7 +38,9 @@ class PlayerCharacter:
     
     # Decorator
     # to write a function
-    # using @classmethod => there's 1 default class (cls)
+    # using @classmethod => you'll have access to cls (Class)
+    # @classmethod is commonly used when we wanna track & change
+    # Class.Attributes => self.name, self.age etc.
     @classmethod
     def adding_things(cls, num1, num2):
         try:
@@ -48,7 +50,22 @@ class PlayerCharacter:
         
         except TypeError as e:
             print(Fore.RED + f'TypeError:\n{e}')
-
+    
+    # Decorator
+    # to write a function
+    # using @staticmethod => you'll NOT have access to cls (Class)
+    # @staticmethod is commonly used when we do NOT care
+    # about Class States => self.name, self.age etc.
+    # using @staticmethod when NOT gonna change self.attributes
+    @staticmethod
+    def adding_things2(num1, num2):
+        try:
+            # when using @staticmethod
+            # cannot be used to access cls (Class)
+            return num1 + num2
+        except TypeError as e:
+            print(Fore.RED + f'TypeError:\n{e}')
+        
 
 # Instantiating player1 using class PlayerCharacter
 # with default values
