@@ -29,12 +29,16 @@ class PlayerCharacter:
             self.name = name # attributes / properties
             self.age = age # attributes / properties
         
+    # Instantiating Class with self (this)
     def run(self, hello):
         print(f'{hello} {self.name} is running :D')
         return 'done'
     
     def shout(self):
         print(Fore.YELLOW + f'My name is: {self.name}')
+        
+    def speak(self):
+        print(f'my name is {self.name}, and I am {self.age} years old')
     
     # Decorator
     # to write a function
@@ -75,17 +79,25 @@ print(Fore.YELLOW + f'player1:\n{player1}')
 print(Fore.YELLOW + f'player1.name: {player1.name}') 
 print(Fore.YELLOW + f'player1.age: {player1.age}')
 print(f'\n')
+print(f'player1.speak()')
+player1.speak()
+print(f'\n')
 print(Fore.YELLOW + f'player1.run(): {player1.run("OMG!")}')
 
 print(f'\n')
-player2 = PlayerCharacter('Player2', 24)
-player2.attack = 50
+player2 = {'name': 'Player2', 'age': 25 }
+print(f'player2["name"]: {player2["name"]}')
+print(f'player2["age"]: {player2["age"]}')
 
-print(Fore.YELLOW + f'player1.membership: {player1.membership}')
-print(Fore.YELLOW + f'player2.membership: {player2.membership}')
-print(f'\n')
-print(Fore.YELLOW + f'player1.shout(): {player1.shout()}')
-print(Fore.YELLOW + f'player2.shout(): {player2.shout()}')
+# print(f'\n')
+# player2 = PlayerCharacter('Player2', 24)
+# player2.attack = 50
+
+# print(Fore.YELLOW + f'player1.membership: {player1.membership}')
+# print(Fore.YELLOW + f'player2.membership: {player2.membership}')
+# print(f'\n')
+# print(Fore.YELLOW + f'player1.shout(): {player1.shout()}')
+# print(Fore.YELLOW + f'player2.shout(): {player2.shout()}')
 #print(f'player2:\n{player2}')
 #print(f'player2.name: {player2.name}')
 #print(f'player2.age: {player2.age}')
