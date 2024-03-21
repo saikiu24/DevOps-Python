@@ -17,6 +17,7 @@ count = 0
 while count < 2:
     # Looping through each row in picture
     for row in picture:
+        # Looping through each pixel in 1 row
         for pixel in row:
             
             if (pixel == 1):
@@ -25,7 +26,8 @@ while count < 2:
             else:
                 print(f' ', end='')
         
-        # Print a new line at the end of each row
+        # Print a new line at the end of
+        # looping through all pixels of each row
         print(f'')
     
     # Printing 2 trees
