@@ -1,11 +1,14 @@
 # OOP
 from colorama import Fore, Back, Style
 
+# private?
 class PlayerCharacter:
     
     # Class Object Attribute => self.attribute
     # NOT change across objects built with same Class
     membership = True
+    
+    # __ => Do NOT fuck with my stuff ;) thanks
     
     # __init__ = class Constructor
     # similar to constructor(attr1, attr2) { super(attr1) } in javascript
@@ -14,11 +17,13 @@ class PlayerCharacter:
     # self. = this. in javascript
     def __init__(self, name='anonymous', age=0):  
         # name='anonymous', age=0 => default values
-        
+                
         # Instantiating only if age > 18
         if (age > 18):
-            self.name = name
-            self.age = age
+            
+            # _.variable => Do NOT fuck with my vairable thanks ;)
+            self._name = name
+            self._age = age
         elif (age == 0):
             print(Fore.RED + f'Failed to instantiate this Class with {self}:\nname: {name}\nage: {age}')
             print(Fore.RED + f'Please check whether you\'ve provided age')
@@ -26,19 +31,19 @@ class PlayerCharacter:
             
         # If this.membership = True
         if (self.membership):
-            self.name = name # attributes / properties
-            self.age = age # attributes / properties
+            self._name = name # attributes / properties
+            self._age = age # attributes / properties
         
     # Instantiating Class with self (this)
     def run(self, hello):
-        print(f'{hello} {self.name} is running :D')
+        print(f'{hello} {self._name} is running :D')
         return 'done'
     
     def shout(self):
-        print(Fore.YELLOW + f'My name is: {self.name}')
+        print(Fore.YELLOW + f'My name is: {self._name}')
         
     def speak(self):
-        print(f'my name is {self.name}, and I am {self.age} years old')
+        print(f'my name is {self._name}, and I am {self._age} years old')
     
     # Decorator
     # to write a function
@@ -76,8 +81,8 @@ class PlayerCharacter:
 player1 = PlayerCharacter('Player1', 20)
 #help(player1)
 print(Fore.YELLOW + f'player1:\n{player1}')
-print(Fore.YELLOW + f'player1.name: {player1.name}') 
-print(Fore.YELLOW + f'player1.age: {player1.age}')
+print(Fore.YELLOW + f'player1.name: {player1._name}') 
+print(Fore.YELLOW + f'player1.age: {player1._age}')
 print(f'\n')
 print(f'player1.speak()')
 player1.speak()
@@ -94,52 +99,3 @@ The world is gonna end
 Cuz everyone's hard work will get totally wiped out...
 '''
 print(player1.speak) # BOOO
-
-
-
-
-'''
-print(f'\n')
-player2 = {'name': 'Player2', 'age': 25 }
-print(f'player2["name"]: {player2["name"]}')
-print(f'player2["age"]: {player2["age"]}')
-print(f'\n')
-player2 = PlayerCharacter('Player2', 24)
-player2.attack = 50
-
-print(Fore.YELLOW + f'player1.membership: {player1.membership}')
-print(Fore.YELLOW + f'player2.membership: {player2.membership}')
-print(f'\n')
-print(Fore.YELLOW + f'player1.shout(): {player1.shout()}')
-print(Fore.YELLOW + f'player2.shout(): {player2.shout()}')
-print(f'player2:\n{player2}')
-print(f'player2.name: {player2.name}')
-print(f'player2.age: {player2.age}')
-print(f'player2.attack: {player2.attack}')
-'''
-
-
-
-'''
-print(f'\n')
-player3 = PlayerCharacter()
-player3.attack = 100
-'''
-
-print(f'\n')
-# When using @classmethod decorator to instantiate a Class
-# we must instantiate the Class (cls) 
-# @classmethod
-# def func(cls, arg1, arg2):
-
-# Otherwise
-# TypeError: adding_things() takes 2 positional arguments
-# but 3 were given
-print(Fore.YELLOW + f'player1.adding_things(): {player1.adding_things(2,3)}')
-
-print(f'\n')
-# Instantiating player4 using a function from Class.Attribute
-# player4 = PlayerCharacter.adding_things(num1,num2) => Class.Attribute(arg1,arg2)
-# rather than just calling the Class => player4 = PlayerCharacter()
-player4 = PlayerCharacter.adding_things(2,3)
-print(f'player4.age: {player4.age}')
