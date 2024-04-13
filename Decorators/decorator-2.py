@@ -34,9 +34,12 @@ def hello():
 def bye():
     print('see ya later')
 
+print(f'hello()')
 hello()
 print(f'\n')
+print(f'my_decorator(hello)()')
 my_decorator(hello)()
 print(f'\n')
+print(f'bye()')
 bye()
 
